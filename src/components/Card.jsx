@@ -14,23 +14,14 @@ function TagsList({ tags }) {
         return (
           <li
             key={i}
-            className={`mr-3 inline px-2 py-1 text-white ${colorMap[tag]}`}
+            className={` mr-3 inline rounded-xl px-2 py-0.5 text-sm text-white shadow-sm shadow-green-800 ${colorMap[tag]}`}
           >
-            {tag}
+            <a href="#">{tag}</a>
           </li>
         );
       })}
     </ul>
   );
-  // return (
-  //   <ul className="mb-3">
-  //     {tags.map((tag, i) => (
-  //       <li key={i} className={`mr-3 inline px-2 py-1 text-white`}>
-  //         {tag}
-  //       </li>
-  //     ))}
-  //   </ul>
-  // );
 }
 
 const Card = ({ title, image, published, content, tags }) => {
@@ -38,7 +29,7 @@ const Card = ({ title, image, published, content, tags }) => {
     <div
       className={`${
         !published && 'hidden'
-      } card rounded-md border border-green-800 bg-green-700 font-mono text-white shadow-md shadow-green-800 lg:max-w-md`}
+      } card flex flex-col justify-between rounded-md border border-green-800 bg-green-700 font-mono text-white shadow-md shadow-green-800`}
     >
       <div className="flex items-center justify-center p-2">
         <img
